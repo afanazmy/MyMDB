@@ -151,17 +151,83 @@
 							<img src="images/img_2.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
 						</a>
 					</div> -->
-                    <?php for ($i=0; $i < 3; $i++) { ?>
+                    <?php for ($i=0; $i < $countOpeningThisWeek; $i++) { ?>
 					<div class="col-md-4 col-sm-4">
-						<a href="#" class="gtco-item one-row bg-img animate-box" style="background-image: url(images/img_md_1.jpg)">
+						<a href="#" class="gtco-item one-row bg-img animate-box" style="background-image: url(<?php echo $openingThisWeek[$i]->urlPoster; ?>)">
 							<div class="overlay">
 								<i class="ti-arrow-top-right"></i>
 								<div class="copy">
-									<h3>Paper Pouch</h3>
+									<h3><?php echo $openingThisWeek[$i]->title; ?></h3>
+									<p><?php echo $openingThisWeek[$i]->simplePlot; ?></p>
+								</div>
+							</div>
+							<img src="<?php echo $openingThisWeek[$i]->urlPoster; ?>" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
+						</a>
+					</div>
+                    <?php } ?>
+					<!-- <div class="col-md-4 col-sm-4">
+						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_3.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Fancy 3D</h3>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 								</div>
 							</div>
-							<img src="images/img_md_1.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
+							<img src="images/img_3.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
+						</a>
+						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_4.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Hard Cover Book</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_4.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
+						</a>
+					</div> -->
+				</div>
+
+				<div class="row row-pb-sm">
+					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+						<h2>In Theaters Now</h2>
+					</div>
+				</div>
+				<div class="row row-pb-md">
+					<!-- <div class="col-md-4 col-sm-4">
+						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_1.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Paper Hot Cup</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_1.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
+						</a>
+						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_2.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Notepad Mockup</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_2.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
+						</a>
+					</div> -->
+                    <?php for ($i=0; $i < $countInTheatersNow; $i++) { ?>
+					<div class="col-md-4 col-sm-4">
+						<a href="#" class="gtco-item one-row bg-img animate-box" style="background-image: url(<?php echo $inTheatersNow[$i]->urlPoster; ?>)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3><?php echo $inTheatersNow[$i]->title; ?></h3>
+									<p><?php echo $inTheatersNow[$i]->simplePlot; ?></p>
+								</div>
+							</div>
+							<img src="<?php echo $inTheatersNow[$i]->urlPoster; ?>" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
 						</a>
 					</div>
                     <?php } ?>

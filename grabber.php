@@ -4,4 +4,6 @@
     $openingThisWeek = $inTheaters->movies[0]->movie;
     $inTheatersNow = $inTheaters->movies[1]->movie;
 
+    $countOpeningThisWeek = count($openingThisWeek);
+    $countInTheatersNow = count($inTheatersNow);
 ?>
