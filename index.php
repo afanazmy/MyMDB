@@ -130,10 +130,10 @@
 				</div>
 				<div class="row row-pb-md">
                     <?php for ($i=0; $i < $countOpeningThisWeek; $i++) { ?>
-					<div class="col-md-4 col-sm-4">
-						<a href="#" class="gtco-item one-row bg-img animate-box" style="background-image: url(<?php echo $openingThisWeek[$i]->urlPoster; ?>)">
+					<div class="col-md-3 col-sm-3">
+						<a href="detail.php?idIMDB=<?php echo $inTheatersNow[$i]->idIMDB; ?>" class="gtco-item one-row bg-img animate-box" style="background-image: url(<?php echo $openingThisWeek[$i]->urlPoster; ?>)">
 							<div class="overlay">
-								<i class="ti-arrow-top-right"></i>
+								<i><?php if (isset($inTheatersNow[$i]->runtime)) { echo $inTheatersNow[$i]->runtime; } ?></i>
 								<div class="copy">
 									<h3><?php echo $openingThisWeek[$i]->title; ?></h3>
 									<p><?php echo $openingThisWeek[$i]->simplePlot; ?></p>
@@ -152,10 +152,10 @@
 				</div>
 				<div class="row row-pb-md">
                     <?php for ($i=0; $i < $countInTheatersNow; $i++) { ?>
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-3 col-sm-3">
 						<a href="#" class="gtco-item one-row bg-img animate-box" style="background-image: url(<?php echo $inTheatersNow[$i]->urlPoster; ?>)">
 							<div class="overlay">
-								<i class="ti-arrow-top-right"></i>
+								<i><?php echo $inTheatersNow[$i]->runtime; ?></i>
 								<div class="copy">
 									<h3><?php echo $inTheatersNow[$i]->title; ?></h3>
 									<p><?php echo $inTheatersNow[$i]->simplePlot; ?></p>

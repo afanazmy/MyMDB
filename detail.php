@@ -58,6 +58,13 @@
 
 	<div class="gtco-loader"></div>
 
+	<?php
+		$idIMDB = $_GET['idIMDB'];
+
+		$grab = simplexml_load_file("http://www.myapifilms.com/imdb/idIMDB?idIMDB=".$idIMDB."&token=beb0bac5-5a6f-4b5b-bffc-43a3e21467ae&format=xml&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=0&biography=0&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=0&actorTrivia=0&similarMovies=0&goofs=0&keyword=0&quotes=0&fullSize=0&companyCredits=0&filmingLocations=0");
+		$detail = $grab->data->movie;
+	?>
+
 	<div id="page">
 
 		<nav class="gtco-nav" role="navigation">
@@ -70,7 +77,7 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li class="active"><a href="about.html">About</a></li>
+							<li><a href="about.html">About</a></li>
 							<li class="has-dropdown">
 								<a href="services.html">Services</a>
 								<ul class="dropdown">
@@ -90,7 +97,7 @@
 								</ul>
 							</li>
 							<li><a href="portfolio.html">Portfolio</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li class="active"><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -106,8 +113,7 @@
 							<div class="display-tc">
 								<div class="row">
 									<div class="col-md-8">
-										<h1 class="no-margin">About Us</h1>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia facilis, accusamus iusto animi.</p>
+										<h1 class="no-margin"><?php echo $detail->title; ?></h1>
 									</div>
 								</div>
 							</div>
@@ -118,274 +124,31 @@
 		</header>
 		<!-- END #gtco-header -->
 
-
-
-		<div class="gtco-services gtco-section">
+		<div class="gtco-section">
 			<div class="gtco-container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-						<h2>Our Team</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
+					<div class="col-md-2 col-sm-2">
+						<img src="<?php echo $detail->urlPoster; ?>" alt="">
 					</div>
-				</div>
-				<div class="row">
-
-					<div class="col-md-12">
-						<div class="owl-carousel owl-carousel-carousel">
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_1.jpg" alt="" class="img-responsive">
-									<h2>Jane Simpson</h2>
-									<p class="role">Founder</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_2.jpg" alt="" class="img-responsive">
-									<h2>Richard Wilson</h2>
-									<p class="role">Developer</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_3.jpg" alt="" class="img-responsive">
-									<h2>Craig Davidson</h2>
-									<p class="role">Designer</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_1.jpg" alt="" class="img-responsive">
-									<h2>Jane Simpson</h2>
-									<p class="role">Founder</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_2.jpg" alt="" class="img-responsive">
-									<h2>Richard Wilson</h2>
-									<p class="role">Developer</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_3.jpg" alt="" class="img-responsive">
-									<h2>Craig Davidson</h2>
-									<p class="role">Designer</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_1.jpg" alt="" class="img-responsive">
-									<h2>Jane Simpson</h2>
-									<p class="role">Founder</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_2.jpg" alt="" class="img-responsive">
-									<h2>Richard Wilson</h2>
-									<p class="role">Developer</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="item">
-								<div class="gtco-staff">
-									<img src="images/staff_3.jpg" alt="" class="img-responsive">
-									<h2>Craig Davidson</h2>
-									<p class="role">Designer</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-									<ul class="fh5co-social">
-										<li><a href="#"><i class="icon-facebook"></i></a></li>
-										<li><a href="#"><i class="icon-twitter"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
+					<div class="col-md-6 col-md-push-1">
+						<div class="gtco-contact-info">
+							<h3>Our Address</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul >
+								<li class="address">198 West 21th Street, Suite 721 New York NY 10016</li>
+								<li class="phone"><a href="tel://1234567890">1235 2355 980</a></li>
+								<li class="email"><a href="#">info@yoursite.com</a></li>
+								<li class="url"><a href="#">www.yoursite.com</a></li>
+							</ul>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
 		<!-- END .gtco-services -->
 
-		<div class="gtco-section gtco-products">
-			<div class="gtco-container">
-				<div class="row row-pb-sm">
-					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-						<h2>Popular Products</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-					</div>
-				</div>
-				<div class="row row-pb-md">
-					<div class="col-md-4 col-sm-4">
-						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_1.jpg)">
-							<div class="overlay">
-								<i class="ti-arrow-top-right"></i>
-								<div class="copy">
-									<h3>Paper Hot Cup</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-								</div>
-							</div>
-							<img src="images/img_1.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
-						</a>
-						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_2.jpg)">
-							<div class="overlay">
-								<i class="ti-arrow-top-right"></i>
-								<div class="copy">
-									<h3>Notepad Mockup</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-								</div>
-							</div>
-							<img src="images/img_2.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<a href="#" class="gtco-item one-row bg-img animate-box" style="background-image: url(images/img_md_1.jpg)">
-							<div class="overlay">
-								<i class="ti-arrow-top-right"></i>
-								<div class="copy">
-									<h3>Paper Pouch</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-								</div>
-							</div>
-							<img src="images/img_md_1.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_3.jpg)">
-							<div class="overlay">
-								<i class="ti-arrow-top-right"></i>
-								<div class="copy">
-									<h3>Fancy 3D</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-								</div>
-							</div>
-							<img src="images/img_3.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
-						</a>
-						<a href="#" class="gtco-item two-row bg-img animate-box" style="background-image: url(images/img_4.jpg)">
-							<div class="overlay">
-								<i class="ti-arrow-top-right"></i>
-								<div class="copy">
-									<h3>Hard Cover Book</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-								</div>
-							</div>
-							<img src="images/img_4.jpg" class="hidden" alt="Free HTML5 Website Template by GetTemplates.co">
-						</a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 text-center">
-					<p><a href="http://gettemplates.co" target="_blank" class="btn btn-special">Visit Gettemplates.co</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- END .gtco-products -->
 
-		<div class="gtco-section gtco-testimonial gtco-gray">
-			<div class="gtco-container">
-
-				<div class="row row-pb-sm">
-					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-						<h2>People Love Us</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6 col-sm-6 animate-box">
-						<div class="gtco-testimony gtco-left">
-							<div><img src="images/person_1.jpg" alt="Free Website template by GetTemplates.co"></div>
-							<blockquote>
-								<p>&ldquo;Design must be functional and functionality must be translated into visual aesthetics, without any reliance on gimmicks that have to be explained.&rdquo; <cite class="author">&mdash; Ferdinand A. Porsche</cite></p>
-							</blockquote>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-sm-6 animate-box">
-						<div class="gtco-testimony gtco-left">
-							<div><img src="images/person_2.jpg" alt="Free Website template by GetTemplates.co"></div>
-							<blockquote>
-								<p>&ldquo;Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while.&rdquo; <cite class="author">&mdash; Steve Jobs</cite></p>
-							</blockquote>
-						</div>
-					</div>
-
-
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-sm-6 animate-box">
-						<div class="gtco-testimony gtco-left">
-							<div><img src="images/person_3.jpg" alt="Free Website template by GetTemplates.co"></div>
-							<blockquote>
-								<p>&ldquo;I think design would be better if designers were much more skeptical about its applications. If you believe in the potency of your craft, where you choose to dole it out is not something to take lightly.&rdquo; <cite class="author">&mdash; Frank Chimero</cite></p>
-							</blockquote>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-sm-6 animate-box">
-						<div class="gtco-testimony gtco-left">
-							<div><img src="images/person_1.jpg" alt="Free Website template by GetTemplates.co"></div>
-							<blockquote>
-								<p>&ldquo;Design must be functional and functionality must be translated into visual aesthetics, without any reliance on gimmicks that have to be explained.&rdquo; <cite class="author">&mdash; Ferdinand A. Porsche</cite></p>
-							</blockquote>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div id="map"></div>
 
 
 		<footer id="gtco-footer" class="gtco-section" role="contentinfo">
@@ -459,15 +222,15 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
 	<!-- Carousel -->
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
 
-
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="js/google_map.js"></script>
 
 	<!-- Main -->
 	<script src="js/main.js"></script>
