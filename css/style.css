@@ -796,6 +796,22 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 23px;
   content: "\e9af";
 }
+.gtco-contact-info ul li.video:before {
+  font-size: 30px;
+  content: "\e018";
+}
+.gtco-contact-info ul li.director:before {
+  font-size: 30px;
+  content: "\ea36";
+}
+.gtco-contact-info ul li.date:before {
+  font-size: 30px;
+  content: "\e979";
+}
+.gtco-contact-info ul li.runtime:before {
+  font-size: 30px;
+  content: "\ea2d";
+}
 
 #map {
   width: 100%;

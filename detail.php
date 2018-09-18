@@ -8,7 +8,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Cube &mdash; Free Website Template, Free HTML5 Template by gettemplates.co</title>
+	<title>MyMDB &mdash; My Movie Database</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -77,27 +77,6 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li class="has-dropdown">
-								<a href="services.html">Services</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li class="has-dropdown">
-								<a href="#">Dropdown</a>
-								<ul class="dropdown">
-									<li><a href="#">HTML5</a></li>
-									<li><a href="#">CSS3</a></li>
-									<li><a href="#">Sass</a></li>
-									<li><a href="#">jQuery</a></li>
-								</ul>
-							</li>
-							<li><a href="portfolio.html">Portfolio</a></li>
-							<li class="active"><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -130,15 +109,53 @@
 					<div class="col-md-2 col-sm-2">
 						<img src="<?php echo $detail->urlPoster; ?>" alt="">
 					</div>
-					<div class="col-md-6 col-md-push-1">
+					<div class="col-md-8 col-md-push-1">
 						<div class="gtco-contact-info">
-							<h3>Our Address</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3>Sinopsis</h3>
+							<p style="text-align:justify"><?php echo $detail->plot; ?></p>
 							<ul >
-								<li class="address">198 West 21th Street, Suite 721 New York NY 10016</li>
-								<li class="phone"><a href="tel://1234567890">1235 2355 980</a></li>
-								<li class="email"><a href="#">info@yoursite.com</a></li>
-								<li class="url"><a href="#">www.yoursite.com</a></li>
+								<li class="video">
+									<a href="#">
+										Genre :
+										<?php
+											$countGenre = count($detail->genres->genre);
+											for ($i=0; $i < $countGenre; $i++) {
+												if ($i == $countGenre - 1) {
+													echo $detail->genres->genre[$i];
+												} else {
+													echo $detail->genres->genre[$i].", ";
+												}
+											}
+										?>
+									</a>
+								</li>
+								<li class="runtime">
+									<a href="#">
+										Runtime :
+										<?php
+											echo $detail->runtime;
+										?>
+									</a>
+								</li>
+								<li class="director">
+									<a href="#">
+										Director :
+										<?php
+											echo $detail->directors->director->name;
+										?>
+									</a>
+								</li>
+								<li class="date">
+									<a href="#">
+										Release Date :
+										<?php
+											//setlocale(LC_ALL, 'id');
+											$date = date_create($detail->relaseDate);
+											$releaseDate = date_format($date, "d F Y");
+											echo $releaseDate;
+										?>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -147,53 +164,7 @@
 		</div>
 		<!-- END .gtco-services -->
 
-
-		<div id="map"></div>
-
-
 		<footer id="gtco-footer" class="gtco-section" role="contentinfo">
-			<div class="gtco-container">
-				<div class="row row-pb-md">
-					<div class="col-md-8 col-md-offset-2 gtco-cta text-center">
-						<h3>We Love To Talk About Your Business</h3>
-						<p><a href="#" class="btn btn-white btn-outline">Contact Us</a></p>
-					</div>
-				</div>
-				<div class="row row-pb-md">
-					<div class="col-md-4 gtco-widget gtco-footer-paragraph">
-						<h3>Cube</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod.</p>
-					</div>
-					<div class="col-md-4 gtco-footer-link">
-						<div class="row">
-							<div class="col-md-6">
-								<ul class="gtco-list-link">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Features</a></li>
-									<li><a href="#">Products</a></li>
-									<li><a href="#">Testimonial</a></li>
-									<li><a href="#">Contact</a></li>
-								</ul>
-							</div>
-							<div class="col-md-6">
-								<p>
-									<a href="tel://1234567890">+1 234 4565 2342</a> <br>
-									<a href="#">info@domain.com</a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 gtco-footer-subscribe">
-						<form class="form-inline">
-						  <div class="form-group">
-						    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-						    <input type="email" class="form-control" id="" placeholder="Email">
-						  </div>
-						  <button type="submit" class="btn btn-primary">Send</button>
-						</form>
-					</div>
-				</div>
-			</div>
 			<div class="gtco-copyright">
 				<div class="gtco-container">
 					<div class="row">
